@@ -24,6 +24,7 @@ export class AppRoot {
         <ion-router useHash={false}>
           <ion-route url={`${SUBDIR_URI}/`} component="app-home-page" componentProps={{ jobs: this.jobs }} />
           <ion-route url={`${SUBDIR_URI}/favorites`} component="app-favorites-page" />
+          <ion-route url={`${SUBDIR_URI}/job/:name`} component="app-job-card" componentProps={{ jobs: this.jobs }} ></ion-route>
         </ion-router>
         <ion-nav />
       </ion-app>

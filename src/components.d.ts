@@ -16,6 +16,16 @@ export namespace Components {
   interface AppHomePage {
     'jobs': any;
   }
+  interface AppJobCard {
+    'jobs': any;
+    'name': string;
+  }
+  interface AppJobItem {
+    'job': any;
+  }
+  interface AppJobsList {
+    'jobs': any;
+  }
   interface AppRoot {}
 }
 
@@ -34,6 +44,24 @@ declare global {
     new (): HTMLAppHomePageElement;
   };
 
+  interface HTMLAppJobCardElement extends Components.AppJobCard, HTMLStencilElement {}
+  var HTMLAppJobCardElement: {
+    prototype: HTMLAppJobCardElement;
+    new (): HTMLAppJobCardElement;
+  };
+
+  interface HTMLAppJobItemElement extends Components.AppJobItem, HTMLStencilElement {}
+  var HTMLAppJobItemElement: {
+    prototype: HTMLAppJobItemElement;
+    new (): HTMLAppJobItemElement;
+  };
+
+  interface HTMLAppJobsListElement extends Components.AppJobsList, HTMLStencilElement {}
+  var HTMLAppJobsListElement: {
+    prototype: HTMLAppJobsListElement;
+    new (): HTMLAppJobsListElement;
+  };
+
   interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {}
   var HTMLAppRootElement: {
     prototype: HTMLAppRootElement;
@@ -42,6 +70,9 @@ declare global {
   interface HTMLElementTagNameMap {
     'app-favorites-page': HTMLAppFavoritesPageElement;
     'app-home-page': HTMLAppHomePageElement;
+    'app-job-card': HTMLAppJobCardElement;
+    'app-job-item': HTMLAppJobItemElement;
+    'app-jobs-list': HTMLAppJobsListElement;
     'app-root': HTMLAppRootElement;
   }
 }
@@ -53,11 +84,24 @@ declare namespace LocalJSX {
   interface AppHomePage {
     'jobs'?: any;
   }
+  interface AppJobCard {
+    'jobs'?: any;
+    'name'?: string;
+  }
+  interface AppJobItem {
+    'job'?: any;
+  }
+  interface AppJobsList {
+    'jobs'?: any;
+  }
   interface AppRoot {}
 
   interface IntrinsicElements {
     'app-favorites-page': AppFavoritesPage;
     'app-home-page': AppHomePage;
+    'app-job-card': AppJobCard;
+    'app-job-item': AppJobItem;
+    'app-jobs-list': AppJobsList;
     'app-root': AppRoot;
   }
 }
@@ -70,6 +114,9 @@ declare module "@stencil/core" {
     interface IntrinsicElements {
       'app-favorites-page': LocalJSX.AppFavoritesPage & JSXBase.HTMLAttributes<HTMLAppFavoritesPageElement>;
       'app-home-page': LocalJSX.AppHomePage & JSXBase.HTMLAttributes<HTMLAppHomePageElement>;
+      'app-job-card': LocalJSX.AppJobCard & JSXBase.HTMLAttributes<HTMLAppJobCardElement>;
+      'app-job-item': LocalJSX.AppJobItem & JSXBase.HTMLAttributes<HTMLAppJobItemElement>;
+      'app-jobs-list': LocalJSX.AppJobsList & JSXBase.HTMLAttributes<HTMLAppJobsListElement>;
       'app-root': LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
     }
   }

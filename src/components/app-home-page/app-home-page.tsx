@@ -13,14 +13,13 @@ export class AppHomePage {
     return [
       <ion-header>
         <ion-toolbar color="primary">
-          <ion-title>Home</ion-title>
+          <ion-title>Remote Jobs ({this.jobs.length})</ion-title>
         </ion-toolbar>
       </ion-header>,
 
       <ion-content class="ion-padding">
-        <p>There are {this.jobs.length} jobs right now!</p>
-
         <ion-button href={`${SUBDIR_URI}/favorites`} expand="block">Favorites</ion-button>
+        <app-jobs-list jobs={this.jobs}></app-jobs-list>
       </ion-content>
     ];
   }
